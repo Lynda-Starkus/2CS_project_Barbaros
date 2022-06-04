@@ -98,6 +98,8 @@ decoded) => {
          if (decoded) {
              //For windows
              exec("cd C:/Program Files/RealVNC/VNC Viewer");
+
+             //put ip adress of node
              exec("vncviewer 192.168.43.171:"+user.port);
 
              //For Linux
