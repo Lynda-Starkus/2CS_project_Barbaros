@@ -96,6 +96,13 @@ decoded) => {
             res.status(500).json({ erros: err });
          }
          if (decoded) {
+             //For windows
+             exec("cd C:/Program Files/RealVNC/VNC Viewer");
+             exec("vncviewer 192.168.43.171:"+user.port);
+
+             //For Linux
+             //exec("vncviewer :"+user.port);
+
              return res.status(200).json({
                 success: true,
                 token: access_token,
