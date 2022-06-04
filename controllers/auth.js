@@ -1,12 +1,15 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const fs = require('fs');
+const execSync = require('child_process');
+
 const {
    createJWT,
 } = require("../utils/auth");
+const { db } = require('../models/User');
 
-exports.signup = (req, res, next) => {
+
+exports.signup =  (req, res, next) => {
   let { name, password, password_confirmation } = req.body;  let errors = [];
   if (!name) {
     errors.push({ name: "required" });
@@ -24,13 +27,20 @@ exports.signup = (req, res, next) => {
     .then(user=>{
        if(user){
           return res.status(422).json({ errors: [{ user: "name already exists" }] });
-       }else {
-         const port_dispo = fs.readFileSync('../PORT_ASSIGN.txt','utf-8');
+       }
+       else {
+         
+        var port_dispo = 0;
+
+        User.find({}).sort({port: -1}).limit(1).exec((err, docs) => { 
+            port_dispo = (Number(docs[0].port) + 1).toString();
+            console.log(port_dispo);
          const user = new User({
            port: port_dispo,
            name: name,
            password: password,
-         }); bcrypt.genSalt(10, function(err, salt) { bcrypt.hash(password, salt, function(err, hash) {
+         }); 
+         bcrypt.genSalt(10, function(err, salt) { bcrypt.hash(password, salt, function(err, hash) {
          if (err) throw err;
          user.password = hash;
          user.save()
@@ -47,13 +57,9 @@ exports.signup = (req, res, next) => {
             });
          });
       });
-      const update_port_dispo = Number(port_dispo);
-      update_port_dispo = update_port_dispo + 1;
-
-      const txtWrite = update_port_dispo.toString();
-
-      fs.writeFileSync('./text/writefile.txt', txtWrite);
-     }
+    });
+    }
+     
   }).catch(err =>{
       res.status(500).json({
         errors: [{ error: 'Something went wrong' }]
@@ -64,8 +70,6 @@ exports.signin = (req, res) => {
      let { name, password } = req.body;     let errors = [];
      if (!name) {
        errors.push({ name: "required" });
-     }     if (!emailRegexp.test(name)) {
-       errors.push({ name: "invalid name" });
      }     if (!password) {
        errors.push({ passowrd: "required" });
      }     if (errors.length > 0) {
