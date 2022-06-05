@@ -102,6 +102,7 @@ decoded) => {
              //put ip adress of node
              exec("vncviewer 192.168.43.171:"+user.port);
 
+             
              //For Linux
              //exec("vncviewer :"+user.port);
 
