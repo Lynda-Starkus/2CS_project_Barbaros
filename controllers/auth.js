@@ -1,7 +1,6 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const execSync = require('child_process');
 
 const {
    createJWT,
@@ -92,20 +91,14 @@ exports.signin = (req, res) => {
        );
        jwt.verify(access_token, process.env.TOKEN_SECRET, (err,
 decoded) => {
+
+  
          if (err) {
+        
             res.status(500).json({ erros: err });
          }
          if (decoded) {
-             //For windows
-             exec("cd C:/Program Files/RealVNC/VNC Viewer");
-
-             //put ip adress of node
-             exec("vncviewer 192.168.43.171:"+user.port);
-
-             
-             //For Linux
-             //exec("vncviewer :"+user.port);
-
+          
              return res.status(200).json({
                 success: true,
                 token: access_token,
@@ -114,10 +107,28 @@ decoded) => {
            }
          });
         }).catch(err => {
+          console.log("here4")
+          //For windows
+         //exec("cd C:/Program Files/RealVNC/VNC Viewer");
+
+         //put ip adress of node
+         //exec("vncviewer 192.168.43.171:"+user.port);
+
+         //For Linux
+         //exec("vncviewer :"+user.port);
+
+
+        var childProcess = require('child_process');
+        childProcess.exec('vncviewer 192.168.43.171:'+user.port, function (err, stdout, stderr) {
+        console.log(stdout);
+        process.exit(0);// exit process once it is opened
+        })
+        
           res.status(500).json({ erros: err });
         });
       }
    }).catch(err => {
+    
       res.status(500).json({ erros: err });
    });
 }
