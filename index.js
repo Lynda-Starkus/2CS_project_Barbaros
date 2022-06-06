@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 require('dotenv').config();//import routes
 const authRoutes = require('./routes/auth');
 const { db } = require('./models/User');//app
+const { default: axios } = require('axios');
 
 const app = express();// db
 mongoose
@@ -15,7 +16,9 @@ mongoose
   .then(() => console.log('DB Connected'));//middlewares
 app.use(bodyParser.json());
 app.use(cors());//routes middleware
-app.use('/api', authRoutes);const port = process.env.PORT || 8000;app.listen(port, () => {
+
+app.use('/api', authRoutes);
+const port = process.env.PORT || 8000;app.listen(port, () => {
   console.log(`Server is running on ${port}`)
 });
 

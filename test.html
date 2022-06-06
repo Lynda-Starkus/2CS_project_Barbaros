@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Login and Registration Form in HTML & CSS | CodingLab </title>-->
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js" 
+          crossorigin="anonymous">
+  </script>
+   </head>
+<body>
+  <div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <!--<img src="images/frontImg.jpg" alt="">-->
+        <div class="text">
+          <span class="text-1">Bienvenue à la plateforme <br> Barbaros </span>
+          <span class="text-2">Bonne chance avec vos TPs !</span>
+        </div>
+      </div>
+      <div class="back">
+        <img class="backImg" src="images/backImg.jpg" alt="">
+        <div class="text">
+          <span class="text-1">Complete miles of journey <br> with one step</span>
+          <span class="text-2">Let's get started</span>
+        </div>
+      </div>
+    </div>
+
+    <div  class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">Inscription</div>
+          <form  id="form_signup">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="Nom du binome" id="name" name="name" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Mot de passe" name="password" id="password" required>
+              </div>
+
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Confirmation de mot de passe" name="password_confirmation" id="password_confirmation" required>
+              </div>
+
+              <div class="button input-box">
+                <input type="submit" value="Sumbit">
+              </div>
+              <div class="text sign-up-text"> Déjà inscrit au module ? <label for="flip"> Authentification </label></div>
+            </div>
+        </form>
+      </div>
+
+        <div class="signup-form">
+          <div class="title">Authentification</div>
+        <form id="form_signin">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="Nom du binome" id="name2" name="name2" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Mot de passe" name="password2" id="password2" required>
+              </div>
+              <div class="button input-box">
+                <input type="submit" value="Sumbit">
+              </div>
+              <div class="text sign-up-text">Non inscrit au module ? <label for="flip">Inscription</label></div>
+            </div>
+      </form>
+    </div>
+    </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    window.addEventListener("load", () => {
+        const form = document.getElementById("form_signin");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let data = new FormData(form);
+            result = {};
+            for (var entry of data.entries())
+        {
+        result[entry[0]] = entry[1];
+        }
+    result = JSON.stringify(result)
+    console.log(result)
+
+            axios({
+                method: "post",
+                url: "http://localhost:8000/api/signin",
+                data: {
+                    name: document.getElementById("name2").value,
+                    password: document.getElementById("password2").value,
+                },
+            })
+                .then((res) => {
+                    console.log(res);
+                })
+                .catch((err) => {
+                    throw err;
+                });
+        });
+    });
+
+
+
+    window.addEventListener("load", () => {
+        const form = document.getElementById("form_signup");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let data = new FormData(form);
+            result = {};
+            for (var entry of data.entries())
+        {
+        result[entry[0]] = entry[1];
+        }
+    result = JSON.stringify(result)
+    console.log(result)
+
+            axios({
+                method: "post",
+                url: "http://localhost:8000/api/signup",
+                data: {
+                    name: document.getElementById("name").value,
+                    password: document.getElementById("password").value,
+                    password_confirmation: document.getElementById("password_confirmation").value
+                },
+            })
+                .then((res) => {
+                    console.log(res);
+                })
+                .catch((err) => {
+                    throw err;
+                });
+        });
+    });
+
+
+    
+</script>
+
+</body>
+</html>
+
+  

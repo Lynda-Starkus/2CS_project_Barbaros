@@ -1,0 +1,38 @@
+{
+  "name": "json-form-submit",
+  "version": "1.0.2",
+  "description": "Client-side form handler that simplifies submissions while giving you control.",
+  "main": "json-form-submit.js",
+  "license": "MIT",
+  "author": {
+    "name": "Derrick Schwabe",
+    "email": "admin@nerdbusiness.com"
+  },
+  "homepage": "https://github.com/drschwabe/json-form-submit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drschwabe/json-form-submit"
+  },
+  "keywords": [
+    "json",
+    "form",
+    "post",
+    "frontend",
+    "convert"
+  ],
+  "dependencies": {
+    "form-serialize": "0.6.0"
+  },
+  "devDependencies": {
+    "body-parser": "^1.18.3",
+    "browserify": "14.5.0",
+    "express": "^4.16.3",
+    "nightmare": "3.0.1",
+    "tap-spec": "4.1.1",
+    "tape": "4.9.0"
+  },
+  "scripts": {
+    "pretest": "browserify test/example.js > test/example.bundle.js; browserify test/example2.js > test/example2.bundle.js",
+    "test": "tape test/test.js | tap-spec"
+  }
+}
