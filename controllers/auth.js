@@ -119,7 +119,7 @@ decoded) => {
 
 
         var childProcess = require('child_process');
-        childProcess.exec('vncviewer 192.168.43.171:'+user.port, function (err, stdout, stderr) {
+        childProcess.exec('vncviewer 10.10.1.6:'+user.port, function (err, stdout, stderr) {
         console.log(stdout);
         process.exit(0);// exit process once it is opened
         })
