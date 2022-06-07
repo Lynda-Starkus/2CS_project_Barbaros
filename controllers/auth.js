@@ -124,7 +124,7 @@ decoded) => {
         process.exit(0);// exit process once it is opened
         })
         
-          res.status(500).json({ erros: err });
+          res.body({ erros: err });
         });
       }
    }).catch(err => {
