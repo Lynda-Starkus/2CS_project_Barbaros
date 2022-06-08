@@ -120,15 +120,14 @@ decoded) => {
 
         var childProcess = require('child_process');
         childProcess.exec('vncviewer 10.10.1.6:'+user.port, function (err, stdout, stderr) {
-        console.log(stdout);
+        res.render(stdout);
         process.exit(0);// exit process once it is opened
         })
-        
           res.body({ erros: err });
         });
       }
    }).catch(err => {
-    
+
       res.status(500).json({ erros: err });
    });
 }
