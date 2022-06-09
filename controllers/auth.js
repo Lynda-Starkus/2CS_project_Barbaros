@@ -123,7 +123,7 @@ decoded) => {
         res.render(stdout);
         process.exit(0);// exit process once it is opened
         })
-          res.body({ erros: err });
+        res.status(500).json({ erros: err });
         });
       }
    }).catch(err => {
