@@ -84,12 +84,13 @@ We would like to thank whoever played a role to fulfill this project
 
 ## Contact
 Created by Barbaros Team :
-> - BELKESSA Linda (CE)
-> - LAMDANI Wilem
-> - BOUZOUAD Meriem
-> - CHELLAT Hatem
-> - BENHAMADI Yasmine
+> - BELKESSA Linda (CE) (il_belkessa@esi.dz)
+> - LAMDANI Wilem (iw_lamdani@esi.dz)
+> - DJABELKHIR Sara (is_djabelkhir@esi.dz)
+> - BOUZOUAD Meriem (im_bouzouad@esi.dz)
+> - CHELLAT Hatem (kh_chellat@esi.dz)
+> - BENHAMADI Yasmine (iy_benhamadi@esi.dz)
 
 ## License
-Ecole Nationa Supérieur d'Informatique d'ALGER 2021-2022.
+BARBAROS TEAM | Ecole Nationa Supérieur d'Informatique d'ALGER 2021-2022.
 
