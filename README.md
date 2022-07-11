@@ -47,8 +47,8 @@ What can be done:
 ![Web app](./Captures_rapport/general.png)
 *Figure 1: Main page of the web app*
 
-![Authentication after verification in the DB](./Captures_rapport/right_infos.png)
-*Figure 2: Authentication after verification in the DB*
+![Authentication after verification in the DB](./Captures_rapport/inscription.png)
+*Figure 2: Registering process, port being provided automatically in the backend*
 
 
 ## Setup
