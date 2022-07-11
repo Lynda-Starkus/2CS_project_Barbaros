@@ -78,17 +78,18 @@ Room for improvement:
 
 ## Acknowledgements
 We would like to thank whoever played a role to fulfill this project
-- Our teachers : Mr. Amrouche Hakim, Mr. Hamani Nacer and Mr. Sehad Abdenour for their guidance and 
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
+- Our teachers : Mr. Amrouche Hakim, Mr. Hamani Nacer and Mr. Sehad Abdenour for their guidance.
+- Many thanks Mr. Meraghni Oussama for sharing with us concrete knoweledge.
 
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Created by Barbaros Team :
+> - BELKESSA Linda (CE)
+> - LAMDANI Wilem
+> - BOUZOUAD Meriem
+> - CHELLAT Hatem
+> - BENHAMADI Yasmine
 
+## License
+Ecole Nationa Supérieur d'Informatique d'ALGER 2021-2022.
 
-<!-- Optional -->
-<!-- ## License -->
-<!-- This project is open source and available under the [... License](). -->
-
-<!-- You don't have to include all sections - just the one's relevant to your project -->
