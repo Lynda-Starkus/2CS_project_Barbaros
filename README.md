@@ -1,5 +1,5 @@
 
-# BARBAROS :ship: :boat:
+# BARBAROS :ship: :anchor:
 <img src="./Captures_rapport/logo-modified.png" width="100" height="100">
 
 > Barbaros web application, provides a quality solution to use different tools/dev environements...etc. Built on a microservices architecture,
