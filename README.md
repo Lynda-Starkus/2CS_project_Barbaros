@@ -101,5 +101,5 @@ Created by Barbaros Team :
 > - BENHAMADI Yasmine (iy_benhamadi@esi.dz)
 
 ## License
-@ BARBAROS TEAM | Ecole Nationa Supérieur d'Informatique d'ALGER 2021-2022.
+@ BARBAROS TEAM | Ecole Nationale Supérieure d'Informatique d'ALGER 2021-2022.
 
