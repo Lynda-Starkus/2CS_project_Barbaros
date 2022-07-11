@@ -50,6 +50,9 @@ What can be done:
 ![Authentication after verification in the DB](./Captures_rapport/inscription.png)
 *Figure 2: Registering process, port being provided automatically in the backend*
 
+![View of packet tracer as used from the plateforme](./Captures_rapport/pt_live.png)
+*Figure 3: View of packet tracer as used from the plateforme*
+
 
 ## Setup
 1- Run all the VMs that make up the cluster (on a single machine or distributed through a LAN network), it was successfully tested with 1 master node, 2 worker nodes and NFS server. (You can contact us if you need a snapshot of the VMs)
