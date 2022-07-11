@@ -1,4 +1,7 @@
+
 # BARBAROS :ship: :boat:
+<img src="./Captures_rapport/logo-modified.png" width="100" height="100">
+
 > Barbaros web application, provides a quality solution to use different tools/dev environements...etc. Built on a microservices architecture,
 > where tools and dependencies are dockerized and orchestrated using kubernetes, the later being configured on a fully distributed cluster made of : 1 to 2 master nodes, multiple worker nodes and NFS server.
 > registration and authentication of students to get a personal TP's pod is automated via a web plateform built with Nodejs, express and MangoDB. 
@@ -44,13 +47,16 @@ What can be done:
 
 
 ## Screenshots
-![Web app](./Captures_rapport/general.png)
+<img src="./Captures_rapport/general.png" width="800" height="400">
+
 *Figure 1: Main page of the web app*
 
-![Authentication after verification in the DB](./Captures_rapport/inscription.png)
+<img src="./Captures_rapport/inscription.png" width="500" height="400">
+
 *Figure 2: Registering process, port being provided automatically in the backend*
 
-![View of packet tracer as used from the plateforme](./Captures_rapport/pt_live.png)
+<img src="./Captures_rapport/pt_live.png" width="600" height="400">
+
 *Figure 3: View of packet tracer as used from the plateforme*
 
 
