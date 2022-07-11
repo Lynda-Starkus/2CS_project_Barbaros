@@ -18,7 +18,7 @@
 
 
 ## General Information
-- This is the final product of a semester-long school project
+- This is the final product of a semester-long school project, example subjects we took are : SYS1/2 (bash), RES1/2/3 (Packet tracer), OOP/ALOG/IGL (IntelliJ)
 - The main problem is to make it easy for teachers and students to use specific tools and environements required for a subject's labs.
 - Some frequent troubles are : 1CP and 2CP students waste time unnecessarly to install tools/software for labs; incompatibility between versions; some students use linux while others use windows or macOS; teachers need to pass Lab materials through disks or mail; technical support used to work with VMs that are unnecessarly heavy and less portable ...
 - The problems listed above were the main motivation that pushed us to think out a solution based on new technologies with the main focus being an easy-to-use and production-ready product.
@@ -52,37 +52,33 @@ What can be done:
 
 
 ## Setup
-What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
+1- Run all the VMs that make up the cluster (on a single machine or distributed through a LAN network), it was successfully tested with 1 master node, 2 worker nodes and NFS server. (You can contact us if you need a snapshot of the VMs)
 
-Proceed to describe how to install / setup one's local environment / get started with the project.
+2- Download RealVNC (the VNC client to view the running pod)
 
+3- Download Nodejs and relevant dependencies (mangoose, express, axios, ... etc) run the backend with 'npm start'
+
+4- Open the webpage 'index.html'
+
+That's it !
 
 ## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
-
-`write-your-code-here`
+A student registers himself, the backend verifies if he belongs to the subject's students list and if it's the first time registering using the infos stored in the database. Once registered, the student authenticates himself and will be provided a pod (port number) which will redirect him to the VNC client view.
 
 
 ## Project Status
-Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
+Project is: _complete_ 
 
 
 ## Room for Improvement
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
 
 Room for improvement:
-- Improvement to be done 1
-- Improvement to be done 2
-
-To do:
-- Feature to be added 1
-- Feature to be added 2
+- Automating the generation of the YAML configuration files (PV, PVC, service config file, deployement ...)
 
 
 ## Acknowledgements
-Give credit here.
-- This project was inspired by...
+We would like to thank whoever played a role to fulfill this project
+- Our teachers : Mr. Amrouche Hakim, Mr. Hamani Nacer and Mr. Sehad Abdenour for their guidance and 
 - This project was based on [this tutorial](https://www.example.com).
 - Many thanks to...
 
